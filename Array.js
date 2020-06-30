@@ -91,6 +91,26 @@ class CustomArray {
     }
   }
 
+  //Check if there is such value in Array
+  containsValue(value) {
+    for (let i = 0; i < this.length; i++) {
+      if (this.data[i] === value) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  //Return index of the value, if there is no such value in the Array it returns -1
+  indexOfValue(value) {
+    for (let i = 0; i < this.length; i++) {
+      if (this.data[i] === value) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   //Get length of the Array
   getLength() {
     return this.length;
@@ -101,6 +121,13 @@ class CustomArray {
     return this.data;
   }
 }
+
+/*
+ *
+ *  Test
+ * 
+ */
+
 
 //Initialization
 const myArr = new CustomArray();
@@ -128,3 +155,7 @@ myArr.set(2, 10);
 console.log(myArr.printAll()); //[10,99,10]
 
 console.log(myArr.getLength()); //3
+
+console.log(myArr.containsValue(99)); //True
+console.log(myArr.indexOfValue(99)); //1
+console.log(myArr.indexOfValue(33)); //-1
