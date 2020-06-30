@@ -23,6 +23,13 @@ class List {
   //Add value at the end of the List
   add(value) {
     const node = this.createNode(value);
+
+    if (!this.head.value) {
+      this.head = node;
+      this.tail = node;
+      return this.head;
+    }
+
     this.tail.next = node;
     this.tail = node;
     this.length++;
@@ -140,6 +147,11 @@ class List {
     let currentNode = this.head;
     const values = [];
 
+
+    if (this.length < 2) {
+      return this.head.value;
+    }
+
     do {
       values.push(currentNode.value);
       currentNode = currentNode.next;
@@ -149,6 +161,29 @@ class List {
     return values.join(' -> ');
   }
 
+  //Reverse the List
+  reverseList() {
+
+    let firstNode = this.head;
+    let secondNode = this.head.next;
+
+    while (secondNode) {
+      const temporary = secondNode.next;
+      secondNode.next = firstNode;
+      firstNode = secondNode;
+      secondNode = temporary;
+    }
+
+    this.head.next = null;
+    this.head = firstNode;
+  }
+
+  //Clear whole List
+  clear() {
+    this.head = this.createNode(null);
+    this.tail = this.head;
+    this.length = 1;
+  }
 }
 
 
@@ -182,3 +217,10 @@ console.log(exampleList.set(4, 88)) //88
 
 console.log(exampleList.getLength()) // 7
 console.log(exampleList.showListValues()); // 0 -> 10 -> 99 -> 30 -> 88 -> 50 -> 60
+
+exampleList.reverseList();
+console.log(exampleList.showListValues()); // 60 -> 50 -> 88 -> 30 -> 99 -> 10 -> 0
+
+exampleList.clear();
+console.log(exampleList.showList()); //Object with head and tail {value: null, next: null}, length 1
+console.log(exampleList.showListValues()); // null
