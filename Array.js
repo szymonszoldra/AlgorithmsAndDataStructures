@@ -17,6 +17,7 @@ class CustomArray {
   }
 
   //Add value on custom index
+  //if index is greater than current last index it adds value at the end
   addOnIndex(index, value) {
     if (index < 0) {
       console.error(`Index must be greater than 0!`);
@@ -47,6 +48,7 @@ class CustomArray {
   }
 
   //Remove value on custom index
+  //if index is greater than current last index it removes last value
   removeOnIndex(index) {
     if (index < 0) {
       console.error(`Index must be greater than 0!`);
