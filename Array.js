@@ -100,7 +100,7 @@ class CustomArray {
   }
 }
 
-//Inicialize
+//Initialization
 const myArr = new CustomArray();
 
 myArr.add(5);
