@@ -166,6 +166,7 @@ class List {
 
     let firstNode = this.head;
     let secondNode = this.head.next;
+    this.tail = this.head;
 
     while (secondNode) {
       const temporary = secondNode.next;
