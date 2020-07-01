@@ -41,7 +41,7 @@ class Stack {
 
 /*
  *
- *  My implementation of Stack using JS array
+ *  Test
  *  
  */
 
