@@ -11,6 +11,7 @@ class Queue {
     this.length = 0;
   }
 
+  //Create Node to DRY
   createNode(value) {
     return {
       value: value,
@@ -18,6 +19,7 @@ class Queue {
     }
   }
 
+  //Add value to the Queue
   addToQueue(value) {
     const node = this.createNode(value);
     if (!this.length) {
@@ -30,6 +32,7 @@ class Queue {
     this.length++;
   }
 
+  //Delete value at the beginning of the Queue
   dequeue() {
     if (!this.length) {
       return null;
@@ -45,10 +48,12 @@ class Queue {
     }
   }
 
+  //Return value at the beginning of the Queue
   peek() {
     return this.head.value;
   }
 
+  //Return whole Queue as a string
   printQueue() {
     let currentNode = this.head;
     const arr = [];
