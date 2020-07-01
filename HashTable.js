@@ -99,8 +99,7 @@ console.log(exampleHashTable.get('watermelon')); //99
 console.log(exampleHashTable.get('raspberry')); //undefined
 
 console.log(exampleHashTable.getAllKeys()); // 'pineapple', 'watermelon'
-console.log(exampleHashTable.getAllValues());
-5, 99
+console.log(exampleHashTable.getAllValues()); //5, 99
 console.log(exampleHashTable.getAllPairs()); // {key: pineapple, value: 5}, {key: watermelon, value: 99}
 
 
